@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0t61212ogvct"]
+
+[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_3ssf1"]
+[ext_resource type="Script" path="res://Scenes/signup_screen.gd" id="1_07pgn"]
+[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="2_7hj1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwllo"]
+content_margin_left = 90.0
+content_margin_right = 40.0
+bg_color = Color(0.976471, 0.917647, 0.92549, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ssf8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bwf7"]
+bg_color = Color(0.482064, 0.15694, 0.102817, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isqpq"]
+bg_color = Color(0.87451, 0.258824, 0.32549, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipgul"]
+bg_color = Color(0.568627, 0.192157, 0.129412, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvini"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf65d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dlpey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhr5m"]
+
+[node name="SignupScreen" type="Node"]
+script = ExtResource("1_07pgn")
+
+[node name="SignupBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.901961, 0.780392, 0.529412, 1)
+
+[node name="SignupVBoxContainer" type="VBoxContainer" parent="SignupBackground"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 365.0
+offset_right = 702.0
+offset_bottom = 1074.0
+theme_override_constants/separation = 24
+
+[node name="SignupLabel" type="Label" parent="SignupBackground/SignupVBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("1_3ssf1")
+theme_override_font_sizes/font_size = 56
+text = "Sign up
+"
+horizontal_alignment = 1
+
+[node name="QuickLabel" type="Label" parent="SignupBackground/SignupVBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+text = "Just a few quick things to get started
+"
+horizontal_alignment = 1
+
+[node name="UsernameLineEdit" type="LineEdit" parent="SignupBackground/SignupVBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_kwllo")
+placeholder_text = "Username"
+
+[node name="PasswordLineEdit" type="LineEdit" parent="SignupBackground/SignupVBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_kwllo")
+placeholder_text = "Password"
+secret = true
+
+[node name="CreateAccountButton" type="Button" parent="SignupBackground/SignupVBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.976471, 0.917647, 0.92549, 1)
+theme_override_fonts/font = ExtResource("1_3ssf1")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ssf8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6bwf7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isqpq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipgul")
+text = "Create account"
+
+[node name="SignupHBoxContainer" type="HBoxContainer" parent="SignupBackground/SignupVBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoginLabel" type="Label" parent="SignupBackground/SignupVBoxContainer/SignupHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+text = "Already have an account?"
+horizontal_alignment = 1
+
+[node name="LoginButton" type="Button" parent="SignupBackground/SignupVBoxContainer/SignupHBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.482353, 0.156863, 0.101961, 1)
+theme_override_colors/font_pressed_color = Color(0.87451, 0.258824, 0.32549, 1)
+theme_override_colors/font_focus_color = Color(0.568627, 0.192157, 0.129412, 1)
+theme_override_colors/font_color = Color(0.568627, 0.192157, 0.129412, 1)
+theme_override_fonts/font = ExtResource("1_3ssf1")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uvini")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nf65d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dlpey")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uhr5m")
+text = "Log in"
+alignment = 0
+
+[node name="UsernameIcon" type="Label" parent="SignupBackground"]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 540.0
+offset_right = 90.0
+offset_bottom = 607.0
+theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("1_3ssf1")
+theme_override_font_sizes/font_size = 48
+text = "@"
+horizontal_alignment = 1
+
+[node name="PasswordIcon" type="Label" parent="SignupBackground"]
+layout_mode = 2
+offset_left = 48.0
+offset_top = 659.0
+offset_right = 98.0
+offset_bottom = 726.0
+theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("1_3ssf1")
+theme_override_font_sizes/font_size = 36
+text = "|**"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="SignupBackground/SignupVBoxContainer/SignupHBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
