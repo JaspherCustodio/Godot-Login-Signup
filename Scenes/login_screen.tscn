@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bc030tm4rpg3w"]
+[gd_scene load_steps=16 format=3 uid="uid://bc030tm4rpg3w"]
 
 [ext_resource type="Script" path="res://Scenes/login_screen.gd" id="1_6cn1r"]
 [ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="1_y75ms"]
 [ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="2_73fr3"]
 [ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_vccyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gqwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwllo"]
 content_margin_left = 90.0
@@ -13,6 +15,8 @@ corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gj5ge"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ssf8"]
 
@@ -45,10 +49,17 @@ corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhr5m"]
 
-[node name="LoginScreen" type="Node"]
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_6cn1r")
 
 [node name="LoginBackground" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,25 +105,33 @@ theme_override_font_sizes/font_size = 36
 text = "Hello, wecome back"
 horizontal_alignment = 1
 
-[node name="UsernameLineEdit" type="LineEdit" parent="LoginBackground/LoginVBoxContainer"]
+[node name="UsernameLogin" type="LineEdit" parent="LoginBackground/LoginVBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
+theme_override_colors/caret_color = Color(0.105882, 0.105882, 0.105882, 1)
 theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
 theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
 theme_override_fonts/font = ExtResource("3_vccyd")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4gqwg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kwllo")
 placeholder_text = "Username"
+caret_blink = true
 
-[node name="PasswordLineEdit" type="LineEdit" parent="LoginBackground/LoginVBoxContainer"]
+[node name="PasswordLogin" type="LineEdit" parent="LoginBackground/LoginVBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
+theme_override_colors/caret_color = Color(0.105882, 0.105882, 0.105882, 1)
 theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
 theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
 theme_override_fonts/font = ExtResource("3_vccyd")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gj5ge")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kwllo")
 placeholder_text = "Password"
+caret_blink = true
 secret = true
 
 [node name="LoginButton" type="Button" parent="LoginBackground/LoginVBoxContainer"]
@@ -179,4 +198,5 @@ theme_override_font_sizes/font_size = 36
 text = "|**"
 horizontal_alignment = 1
 
+[connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginHBoxContainer/SignupButton" to="." method="_on_signup_button_pressed"]
