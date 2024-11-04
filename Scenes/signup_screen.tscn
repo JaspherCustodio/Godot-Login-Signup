@@ -177,6 +177,24 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_uhr5m")
 text = "Log in"
 alignment = 0
 
+[node name="SuccessfulFeedbackLabel" type="Label" parent="SignupBackground/SignupVBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0352941, 0.439216, 0.262745, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="ErrorFeedbackLabel" type="Label" parent="SignupBackground/SignupVBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831373, 0.160784, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_7hj1d")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
 [node name="UsernameIcon" type="Label" parent="SignupBackground"]
 layout_mode = 2
 offset_left = 48.0

@@ -147,6 +147,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ipgul")
 text = "Log in
 "
 
+[node name="FeedbackLabel" type="Label" parent="LoginBackground/LoginVBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.647059, 0.788235, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("3_vccyd")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
 [node name="LoginHBoxContainer" type="HBoxContainer" parent="LoginBackground/LoginVBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -173,24 +182,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_dlpey")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uhr5m")
 text = "Sign Up"
 alignment = 0
-
-[node name="SuccessfulFeedbackLabel" type="Label" parent="LoginBackground/LoginVBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0352941, 0.439216, 0.262745, 1)
-theme_override_fonts/font = ExtResource("3_vccyd")
-theme_override_font_sizes/font_size = 36
-horizontal_alignment = 1
-
-[node name="ErrorFeedbackLabel" type="Label" parent="LoginBackground/LoginVBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0.831373, 0.160784, 0.196078, 1)
-theme_override_fonts/font = ExtResource("3_vccyd")
-theme_override_font_sizes/font_size = 36
-horizontal_alignment = 1
 
 [node name="UsernameIcon" type="Label" parent="LoginBackground"]
 layout_mode = 2
