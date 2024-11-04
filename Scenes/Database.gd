@@ -38,7 +38,6 @@ func sign_up(username: String, hashed_password: String, salt:String) -> bool:
 func get_user(username: String) -> Dictionary:
 	var query = "SELECT salt, hashed_password, id from users where username = ?"
 	var param_bindings = [username]
-	
 	# Execute the query with bindings
 	db.query_with_bindings(query, param_bindings)
 	
@@ -49,4 +48,5 @@ func get_user(username: String) -> Dictionary:
 		"salt" : i["salt"],
 		"username" : username
 	}
+	
 	return{}

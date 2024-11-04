@@ -10,7 +10,6 @@ extends Control
 func _on_login_button_pressed():
 	var username = username_input.text
 	var password = password_input.text
-	
 	if username == "" or password == "":
 		print("Please enter both username and password.")
 		#feedback_label.text = "Please enter both username and password."
