@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://du2qjl7db3c4v"]
+[gd_scene load_steps=14 format=3 uid="uid://du2qjl7db3c4v"]
 
 [ext_resource type="Script" path="res://Scenes/user_screen.gd" id="1_03px3"]
 [ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_57r61"]
 [ext_resource type="Texture2D" uid="uid://ca3bofxbiyixx" path="res://pp.jpg" id="2_q2fak"]
 [ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_j6fti"]
-[ext_resource type="PackedScene" uid="uid://cothy8gbpajvu" path="res://Scenes/intro_scene.tscn" id="5_ulcki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixm86"]
 bg_color = Color(1, 1, 1, 1)
@@ -233,9 +232,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_isqpq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ipgul")
 text = "Join/Host
 "
-
-[node name="IntroScene" parent="." instance=ExtResource("5_ulcki")]
-layout_mode = 1
 
 [connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton2" to="." method="_on_login_button_pressed"]
