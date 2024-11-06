@@ -6,6 +6,7 @@ extends Control
 @onready var error_feedback_label = %ErrorFeedbackLabel
 @onready var db = Database.new()
 @onready var crypto = UserCrypto.new()
+@onready var loading_scene: Control = $LoadingScene
 
 
 func _on_login_button_pressed():
@@ -16,8 +17,6 @@ func _on_login_button_pressed():
 		successful_feedback_label.hide()
 		error_feedback_label.show()
 		error_feedback_label.text = "Please enter username and password."
-		username_input.text = ""
-		password_input.text = ""
 		return
 	
 	# Fetch user data from the database
@@ -40,14 +39,14 @@ func _on_login_button_pressed():
 			error_feedback_label.hide()
 			successful_feedback_label.show()
 			successful_feedback_label.text = "Login successful!"
-			# Switch to the main game or next scene here
+			loading_scene.show()
+			await(get_tree().create_timer(2.4).timeout)
+			SceneSwitcher.switch_scene("res://Scenes/user_screen.tscn")
 		else:
 			print("Invalid username or password.")
 			successful_feedback_label.hide()
 			error_feedback_label.show()
 			error_feedback_label.text = "Invalid username or password."
-			username_input.text = ""
-			password_input.text = ""
 	else:
 		print("Login failed due to missing data.")
 		successful_feedback_label.hide()

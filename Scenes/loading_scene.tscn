@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc4nht0evnamd"]
+
+[ext_resource type="Script" path="res://loading_scene.gd" id="1_nx6tg"]
+[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="2_e5ovq"]
+
+[sub_resource type="Animation" id="Animation_7gdpr"]
+resource_name = "loading"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(273, 100), Vector2(273, 90), Vector2(273, 80), Vector2(273, 90), Vector2(273, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadLabel2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(332, 100), Vector2(332, 90), Vector2(332, 80), Vector2(332, 90), Vector2(332, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LoadLabel3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1.2, 1.6, 2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(391, 100), Vector2(391, 90), Vector2(391, 80), Vector2(391, 90), Vector2(391, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_jbn56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(273, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydc6d"]
+_data = {
+"RESET": SubResource("Animation_jbn56"),
+"loading": SubResource("Animation_7gdpr")
+}
+
+[node name="LoadingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nx6tg")
+
+[node name="LoadLabel" type="Label" parent="."]
+offset_left = 273.0
+offset_top = 100.0
+offset_right = 328.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.87451, 0.258824, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0.32941, 0.282618, 0.288543, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_e5ovq")
+theme_override_font_sizes/font_size = 250
+text = "."
+horizontal_alignment = 1
+
+[node name="LoadLabel2" type="Label" parent="."]
+offset_left = 332.0
+offset_top = 100.0
+offset_right = 387.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.87451, 0.258824, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0.32941, 0.282618, 0.288543, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_e5ovq")
+theme_override_font_sizes/font_size = 250
+text = "."
+horizontal_alignment = 1
+
+[node name="LoadLabel3" type="Label" parent="."]
+offset_left = 391.0
+offset_top = 100.0
+offset_right = 446.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.87451, 0.258824, 0.32549, 1)
+theme_override_colors/font_shadow_color = Color(0.32941, 0.282618, 0.288543, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_e5ovq")
+theme_override_font_sizes/font_size = 250
+text = "."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ydc6d")
+}
+autoplay = "loading"

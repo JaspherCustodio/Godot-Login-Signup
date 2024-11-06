@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0t61212ogvct"]
+[gd_scene load_steps=18 format=3 uid="uid://b0t61212ogvct"]
 
 [ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_3ssf1"]
 [ext_resource type="Script" path="res://Scenes/signup_screen.gd" id="1_kif0n"]
 [ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="2_7hj1d"]
+[ext_resource type="PackedScene" uid="uid://dc4nht0evnamd" path="res://Scenes/loading_scene.tscn" id="4_5fnov"]
+[ext_resource type="PackedScene" uid="uid://cothy8gbpajvu" path="res://Scenes/intro_scene.tscn" id="5_07dh5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egspq"]
 
@@ -138,7 +140,7 @@ placeholder_text = "Confirm password"
 caret_blink = true
 secret = true
 
-[node name="CreateAccountButton" type="Button" parent="SignupBackground/SignupVBoxContainer"]
+[node name="SignupButton" type="Button" parent="SignupBackground/SignupVBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.976471, 0.917647, 0.92549, 1)
@@ -231,5 +233,14 @@ theme_override_font_sizes/font_size = 36
 text = "|**"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="SignupBackground/SignupVBoxContainer/CreateAccountButton" to="." method="_on_create_account_button_pressed"]
+[node name="LoadingScene" parent="." instance=ExtResource("4_5fnov")]
+visible = false
+layout_mode = 1
+offset_top = 900.0
+offset_bottom = -200.0
+
+[node name="IntroScene" parent="." instance=ExtResource("5_07dh5")]
+layout_mode = 1
+
+[connection signal="pressed" from="SignupBackground/SignupVBoxContainer/SignupButton" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="SignupBackground/SignupVBoxContainer/SignupHBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]

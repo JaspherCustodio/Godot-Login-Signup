@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc030tm4rpg3w"]
+[gd_scene load_steps=18 format=3 uid="uid://bc030tm4rpg3w"]
 
 [ext_resource type="Script" path="res://Scenes/login_screen.gd" id="1_6cn1r"]
 [ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="1_y75ms"]
 [ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="2_73fr3"]
 [ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_vccyd"]
+[ext_resource type="PackedScene" uid="uid://cothy8gbpajvu" path="res://Scenes/intro_scene.tscn" id="5_o8gue"]
+[ext_resource type="PackedScene" uid="uid://dc4nht0evnamd" path="res://Scenes/loading_scene.tscn" id="6_ts38p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gqwg"]
 
@@ -215,6 +217,15 @@ theme_override_fonts/font = ExtResource("2_73fr3")
 theme_override_font_sizes/font_size = 36
 text = "|**"
 horizontal_alignment = 1
+
+[node name="IntroScene" parent="." instance=ExtResource("5_o8gue")]
+layout_mode = 1
+
+[node name="LoadingScene" parent="." instance=ExtResource("6_ts38p")]
+visible = false
+layout_mode = 1
+offset_top = 860.0
+offset_bottom = -240.0
 
 [connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginHBoxContainer/SignupButton" to="." method="_on_signup_button_pressed"]

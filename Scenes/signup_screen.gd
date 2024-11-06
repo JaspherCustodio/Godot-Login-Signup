@@ -7,9 +7,10 @@ extends Control
 @onready var error_feedback_label = %ErrorFeedbackLabel
 @onready var db = Database.new()
 @onready var crypto = UserCrypto.new()
+@onready var loading_scene: Control = $LoadingScene
 
 
-func _on_create_account_button_pressed() -> void:
+func _on_signup_button_pressed() -> void:
 	var username = username_input.text
 	var password = password_input.text
 	var confirm_password = confirm_password_input.text
@@ -45,14 +46,16 @@ func _on_create_account_button_pressed() -> void:
 		successful_feedback_label.show()
 		successful_feedback_label.text = "Signup successful!"
 		# Redirect to login screen or main game scene
+		loading_scene.show()
+		await(get_tree().create_timer(2.4).timeout)
 		SceneSwitcher.switch_scene("res://Scenes/login_screen.tscn")
 	else:
 		print("Signup failed.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
 		error_feedback_label.text = "Signup failed."
-	
-	
+		username_input.text = ""
+		password_input.text = ""
 
 func _on_login_button_pressed() -> void:
 	SceneSwitcher.switch_scene("res://Scenes/login_screen.tscn")
