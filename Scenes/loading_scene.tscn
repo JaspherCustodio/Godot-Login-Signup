@@ -3,6 +3,21 @@
 [ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_nx6tg"]
 [ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Assets/Fonts/arkhip/Arkhip_font.ttf" id="2_e5ovq"]
 
+[sub_resource type="Animation" id="Animation_jbn56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(273, 100)]
+}
+
 [sub_resource type="Animation" id="Animation_7gdpr"]
 resource_name = "loading"
 length = 2.4
@@ -44,21 +59,6 @@ tracks/2/keys = {
 "values": [Vector2(391, 100), Vector2(391, 90), Vector2(391, 80), Vector2(391, 90), Vector2(391, 100)]
 }
 
-[sub_resource type="Animation" id="Animation_jbn56"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LoadLabel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(273, 100)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ydc6d"]
 _data = {
 "RESET": SubResource("Animation_jbn56"),
@@ -76,6 +76,7 @@ grow_vertical = 2
 script = ExtResource("1_nx6tg")
 
 [node name="LoadLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 273.0
 offset_top = 100.0
 offset_right = 328.0
@@ -89,6 +90,7 @@ text = "."
 horizontal_alignment = 1
 
 [node name="LoadLabel2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 100.0
 offset_right = 387.0
@@ -102,6 +104,7 @@ text = "."
 horizontal_alignment = 1
 
 [node name="LoadLabel3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 391.0
 offset_top = 100.0
 offset_right = 446.0
