@@ -8,7 +8,7 @@ A simple login and signup system built using Godot Engine and SQL database.
 
 ## Installation
 1. Clone this repository:
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/JaspherCustodio/ELEC
 2. Open the project in Godot Engine.
 3. Set up the SQL database connection.
 4. Run the project.
