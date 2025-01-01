@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://drkiv2p8kt2h"
-path="res://.godot/imported/AlteHaasGroteskBold.ttf-313a8e75eb238092fe066a9d5aff8888.fontdata"
+uid="uid://drug4hvpqr02n"
+path="res://.godot/imported/Arkhip_font.ttf-c80697e2887fe4787e8113c5db75ca5a.fontdata"
 
 [deps]
 
-source_file="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf"
-dest_files=["res://.godot/imported/AlteHaasGroteskBold.ttf-313a8e75eb238092fe066a9d5aff8888.fontdata"]
+source_file="res://Assets/Fonts/arkhip/Arkhip_font.ttf"
+dest_files=["res://.godot/imported/Arkhip_font.ttf-c80697e2887fe4787e8113c5db75ca5a.fontdata"]
 
 [params]
 

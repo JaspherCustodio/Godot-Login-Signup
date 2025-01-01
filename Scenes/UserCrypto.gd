@@ -2,9 +2,6 @@ extends Node
 class_name UserCrypto
 
 
-# UserCrypto.gd
-
-
 # Generates a random salt
 func generate_salt(length: int = 32) -> String:
 	var crypto = Crypto.new()

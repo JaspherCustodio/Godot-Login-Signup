@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://drug4hvpqr02n"
-path="res://.godot/imported/Arkhip_font.ttf-f170fd9a724608ffaf766a6dfb26cad2.fontdata"
+uid="uid://dcxqpqo4y34vq"
+path="res://.godot/imported/Arkhip_font.otf-52dbbd827ea0c0c04394576e533bbe45.fontdata"
 
 [deps]
 
-source_file="res://Fonts/arkhip/Arkhip_font.ttf"
-dest_files=["res://.godot/imported/Arkhip_font.ttf-f170fd9a724608ffaf766a6dfb26cad2.fontdata"]
+source_file="res://Assets/Fonts/arkhip/Arkhip_font.otf"
+dest_files=["res://.godot/imported/Arkhip_font.otf-52dbbd827ea0c0c04394576e533bbe45.fontdata"]
 
 [params]
 

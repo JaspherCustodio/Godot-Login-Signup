@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://b0t61212ogvct"]
 
-[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_3ssf1"]
+[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Assets/Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_3ssf1"]
 [ext_resource type="Script" path="res://Scenes/signup_screen.gd" id="1_kif0n"]
-[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="2_7hj1d"]
+[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Assets/Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="2_7hj1d"]
 [ext_resource type="PackedScene" uid="uid://dc4nht0evnamd" path="res://Scenes/loading_scene.tscn" id="4_5fnov"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_egspq"]

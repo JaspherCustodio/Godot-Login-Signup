@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://bc030tm4rpg3w"]
 
 [ext_resource type="Script" path="res://Scenes/login_screen.gd" id="1_6cn1r"]
-[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="1_y75ms"]
-[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="2_73fr3"]
-[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_vccyd"]
+[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Assets/Fonts/arkhip/Arkhip_font.ttf" id="1_y75ms"]
+[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Assets/Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="2_73fr3"]
+[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Assets/Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_vccyd"]
 [ext_resource type="PackedScene" uid="uid://dc4nht0evnamd" path="res://Scenes/loading_scene.tscn" id="6_ts38p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gqwg"]

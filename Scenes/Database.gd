@@ -18,7 +18,6 @@ func _init() -> void:
 	
 	db.create_table("users", table_dict)
 
-
 # Adds a new user to the database
 func sign_up(username: String, hashed_password: String, salt:String) -> bool:
 	#insert a new user into the users table

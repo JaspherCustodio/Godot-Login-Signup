@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dc4nht0evnamd"]
 
-[ext_resource type="Script" path="res://loading_scene.gd" id="1_nx6tg"]
-[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="2_e5ovq"]
+[ext_resource type="Script" path="res://Scenes/loading_scene.gd" id="1_nx6tg"]
+[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Assets/Fonts/arkhip/Arkhip_font.ttf" id="2_e5ovq"]
 
 [sub_resource type="Animation" id="Animation_7gdpr"]
 resource_name = "loading"

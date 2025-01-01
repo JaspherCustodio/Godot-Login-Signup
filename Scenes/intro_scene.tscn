@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cothy8gbpajvu"]
 
 [ext_resource type="Script" path="res://Scenes/intro_scene.gd" id="1_araiv"]
-[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Fonts/arkhip/Arkhip_font.ttf" id="2_bc1km"]
+[ext_resource type="FontFile" uid="uid://drug4hvpqr02n" path="res://Assets/Fonts/arkhip/Arkhip_font.ttf" id="2_bc1km"]
 [ext_resource type="PackedScene" uid="uid://dc4nht0evnamd" path="res://Scenes/loading_scene.tscn" id="3_flpsw"]
 
 [node name="IntroScene" type="Control"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://du2qjl7db3c4v"]
+[gd_scene load_steps=5 format=3 uid="uid://du2qjl7db3c4v"]
 
 [ext_resource type="Script" path="res://Scenes/user_screen.gd" id="1_03px3"]
-[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_57r61"]
-[ext_resource type="Texture2D" uid="uid://ca3bofxbiyixx" path="res://pp.jpg" id="2_q2fak"]
-[ext_resource type="FontFile" uid="uid://dkkpx1o74b2ju" path="res://Fonts/alte-haas-grotesk/AlteHaasGroteskRegular.ttf" id="3_j6fti"]
+[ext_resource type="FontFile" uid="uid://drkiv2p8kt2h" path="res://Assets/Fonts/alte-haas-grotesk/AlteHaasGroteskBold.ttf" id="1_57r61"]
+[ext_resource type="Texture2D" uid="uid://dsylr2kpq6wq5" path="res://Assets/Untitled11_20241217192811.png" id="2_g8wc3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixm86"]
 bg_color = Color(1, 1, 1, 1)
@@ -17,52 +16,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gqwg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3obix"]
-content_margin_left = 20.0
-content_margin_right = 20.0
-bg_color = Color(0.976471, 0.917647, 0.92549, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayivy"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-bg_color = Color(0.976471, 0.917647, 0.92549, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gj5ge"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ssf8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bwf7"]
-bg_color = Color(0.482064, 0.15694, 0.102817, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isqpq"]
-bg_color = Color(0.87451, 0.258824, 0.32549, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipgul"]
-bg_color = Color(0.568627, 0.192157, 0.129412, 1)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-
 [node name="UserScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -72,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_03px3")
 
-[node name="LoginBackground" type="ColorRect" parent="."]
+[node name="UserBackground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,31 +34,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.901961, 0.780392, 0.529412, 1)
 
-[node name="LoginVBoxContainer" type="VBoxContainer" parent="LoginBackground"]
+[node name="UserHBoxContainer" type="VBoxContainer" parent="UserBackground"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 130.0
 offset_right = 702.0
 offset_bottom = 1328.0
 theme_override_constants/separation = 24
+alignment = 1
 
-[node name="LoginLabel" type="Label" parent="LoginBackground/LoginVBoxContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="UserBackground/UserHBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
-theme_override_fonts/font = ExtResource("1_57r61")
-theme_override_font_sizes/font_size = 56
-text = "Edit Profile
-"
-horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="LoginBackground/LoginVBoxContainer"]
-custom_minimum_size = Vector2(250, 250)
+[node name="Panel" type="Panel" parent="UserBackground/UserHBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_ixm86")
 
-[node name="TextureRect" type="TextureRect" parent="LoginBackground/LoginVBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="UserBackground/UserHBoxContainer/HBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -118,120 +66,29 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_q2fak")
+texture = ExtResource("2_g8wc3")
 expand_mode = 2
 
-[node name="LoginHBoxContainer2" type="HBoxContainer" parent="LoginBackground/LoginVBoxContainer"]
-layout_mode = 2
-
-[node name="SignupLabel" type="Label" parent="LoginBackground/LoginVBoxContainer/LoginHBoxContainer2"]
+[node name="YouSupPop" type="Label" parent="UserBackground/UserHBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
 theme_override_fonts/font = ExtResource("1_57r61")
-theme_override_font_sizes/font_size = 36
-text = "  Name:     "
+theme_override_font_sizes/font_size = 56
+text = "	'YouSupPop'"
 horizontal_alignment = 1
 
-[node name="UsernameLogin" type="LineEdit" parent="LoginBackground/LoginVBoxContainer/LoginHBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/caret_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
-theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_fonts/font = ExtResource("3_j6fti")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4gqwg")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3obix")
-placeholder_text = "Enter full name"
-caret_blink = true
-
-[node name="LoginHBoxContainer3" type="HBoxContainer" parent="LoginBackground/LoginVBoxContainer"]
-layout_mode = 2
-
-[node name="SignupLabel" type="Label" parent="LoginBackground/LoginVBoxContainer/LoginHBoxContainer3"]
+[node name="JoinLabel" type="Label" parent="UserBackground/UserHBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
 theme_override_fonts/font = ExtResource("1_57r61")
 theme_override_font_sizes/font_size = 36
-text = "  Position: "
+text = " Join me in my journey!"
 horizontal_alignment = 1
 
-[node name="UsernameLogin2" type="LineEdit" parent="LoginBackground/LoginVBoxContainer/LoginHBoxContainer3"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/caret_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
-theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_fonts/font = ExtResource("3_j6fti")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4gqwg")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3obix")
-placeholder_text = "Enter position"
-caret_blink = true
-
-[node name="HBoxContainer" type="VBoxContainer" parent="LoginBackground/LoginVBoxContainer"]
-layout_mode = 2
-
-[node name="HelloLabel" type="Label" parent="LoginBackground/LoginVBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
-theme_override_fonts/font = ExtResource("1_57r61")
-theme_override_font_sizes/font_size = 36
-text = "  Decription:"
-
-[node name="PasswordLogin" type="TextEdit" parent="LoginBackground/LoginVBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_colors/font_placeholder_color = Color(0.521569, 0.458824, 0.466667, 1)
-theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_colors/caret_color = Color(0.105882, 0.105882, 0.105882, 1)
-theme_override_fonts/font = ExtResource("3_j6fti")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_ayivy")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_gj5ge")
-placeholder_text = "Describe yourself.."
-wrap_mode = 1
-scroll_smooth = true
-caret_blink = true
-
-[node name="LoginButton" type="Button" parent="LoginBackground/LoginVBoxContainer"]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.976471, 0.917647, 0.92549, 1)
-theme_override_fonts/font = ExtResource("1_57r61")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0ssf8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6bwf7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_isqpq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ipgul")
-text = "Update Profile
-"
-
-[node name="SignupLabel2" type="Label" parent="LoginBackground/LoginVBoxContainer"]
+[node name="Label" type="Label" parent="UserBackground/UserHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.231373, 0.101961, 0.0823529, 1)
 theme_override_fonts/font = ExtResource("1_57r61")
 theme_override_font_sizes/font_size = 36
 text = "---"
 horizontal_alignment = 1
-
-[node name="LoginButton2" type="Button" parent="LoginBackground/LoginVBoxContainer"]
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.976471, 0.917647, 0.92549, 1)
-theme_override_fonts/font = ExtResource("1_57r61")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0ssf8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6bwf7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_isqpq")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ipgul")
-text = "Join/Host
-"
-
-[connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
-[connection signal="pressed" from="LoginBackground/LoginVBoxContainer/LoginButton2" to="." method="_on_login_button_pressed"]
