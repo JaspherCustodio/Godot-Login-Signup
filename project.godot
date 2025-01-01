@@ -25,7 +25,6 @@ SceneSwitcher="*res://Scenes/scene_switcher.gd"
 
 window/size/viewport_width=720
 window/size/viewport_height=1600
-window/size/initial_position_type=0
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 window/handheld/orientation=1
