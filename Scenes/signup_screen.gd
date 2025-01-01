@@ -5,8 +5,10 @@ extends Control
 @onready var confirm_password_input = %ConfirmPasswordSignup
 @onready var successful_feedback_label = %SuccessfulFeedbackLabel
 @onready var error_feedback_label = %ErrorFeedbackLabel
+
 @onready var db = Database.new()
 @onready var crypto = UserCrypto.new()
+
 @onready var loading_scene: Control = $LoadingScene
 
 
