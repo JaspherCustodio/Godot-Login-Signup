@@ -35,11 +35,13 @@ func _on_signup_button_pressed() -> void:
 		return
 	
 	# Check for invalid characters (only letters and numbers allowed)
-	if not username.match("^[a-zA-Z0-9]+$"):
+	var regex = RegEx.new()
+	regex.compile("^[a-zA-Z0-9_]+$")
+	if not regex.search(username):
 		print("Username can only contain letters and numbers.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "Username can only contain letters and numbers."
+		error_feedback_label.text = "Username can only contain\nletters and numbers."
 		return
 	
 	# Password length check
@@ -47,15 +49,21 @@ func _on_signup_button_pressed() -> void:
 		print("Password must be at least 8 characters long.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "Password must be at least 8 characters long."
+		error_feedback_label.text = "Password must be at least\n8 characters long."
 		return
 	
 	# Password strength check (at least one letter, one number, and one special character)
-	if not password.match(".*[a-zA-Z].*") or not password.match(".*[0-9].*") or not password.match(".*[!@#$%^&*(),.?\":{}|<>].*"):
+	var regex_lowercase = RegEx.new()
+	regex_lowercase.compile("[a-zA-Z]")
+	var regex_number = RegEx.new()
+	regex_number.compile("[0-9]")
+	var regex_special = RegEx.new()
+	regex_special.compile("[!@#$%^&*(),.?\":{}|<>]")
+	if not regex_lowercase.search(password) or not regex_number.search(password) or not regex_special.search(password):
 		print("Password must include letters, numbers, and special characters.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "Password must include letters, numbers, and special characters."
+		error_feedback_label.text = "Password must include letters,\nnumbers, and special characters."
 		return
 	
 	# Check confirm password
@@ -94,7 +102,7 @@ func _on_signup_button_pressed() -> void:
 		print_debug("Error details:", error_details)
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "An unexpected error occurred. Please try again."
+		error_feedback_label.text = "An unexpected error occurred.\nPlease try again."
 		username_input.text = ""
 		password_input.text = ""
 
