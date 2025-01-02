@@ -37,6 +37,7 @@ func _on_signup_button_pressed() -> void:
 	# Check for invalid characters (only letters and numbers allowed)
 	var regex = RegEx.new()
 	regex.compile("^[a-zA-Z0-9_]+$")
+	
 	if not regex.search(username):
 		print("Username can only contain letters and numbers.")
 		successful_feedback_label.hide()
@@ -59,6 +60,7 @@ func _on_signup_button_pressed() -> void:
 	regex_number.compile("[0-9]")
 	var regex_special = RegEx.new()
 	regex_special.compile("[!@#$%^&*(),.?\":{}|<>]")
+	
 	if not regex_lowercase.search(password) or not regex_number.search(password) or not regex_special.search(password):
 		print("Password must include letters, numbers, and special characters.")
 		successful_feedback_label.hide()
@@ -107,4 +109,5 @@ func _on_signup_button_pressed() -> void:
 		password_input.text = ""
 
 func _on_login_button_pressed() -> void:
+	# Switch to the Login screen
 	SceneSwitcher.switch_scene("res://Scenes/login_screen.tscn")
