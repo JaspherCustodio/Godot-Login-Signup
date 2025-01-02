@@ -10,10 +10,10 @@ func _init() -> void:
 	db.open_db()
 	
 	var table_dict: Dictionary = {
-		"id" : {"data_type":"int", "primary_key" : true, "not_null" : true, "auto_increment" : true},
-		"username" : {"data_type":"text", "unique" : true, "not_null" : true},
-		"hashed_password" : {"data_type":"text", "not_null" : true},
-		"salt" : {"data_type":"text", "not_null" : true}
+		"id": {"data_type": "int", "primary_key": true, "not_null": true, "auto_increment": true},
+		"username": {"data_type": "text", "unique": true, "not_null": true},
+		"hashed_password": {"data_type": "text", "not_null": true},
+		"salt": {"data_type": "text", "not_null": true}
 	}
 	
 	db.create_table("users", table_dict)
@@ -27,11 +27,13 @@ func sign_up(username: String, hashed_password: String, salt:String) -> bool:
 		"salt" : salt
 	}
 	
-	db.insert_row("users", row_dict)
-	
-	print_debug(row_dict)
-	
-	return true
+	var result = db.insert_row("users", row_dict)
+	if result:
+		print_debug("User added:", row_dict)
+		return true
+	else:
+		print_debug("Failed to add user:", row_dict)
+		return false
 
 # Retrieves user data by username
 func get_user(username: String) -> Dictionary:
