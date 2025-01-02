@@ -16,6 +16,9 @@ func _on_signup_button_pressed() -> void:
 	var username = username_input.text
 	var password = password_input.text
 	var confirm_password = confirm_password_input.text
+	
+	# --- VALIDATION START ---
+	# Check for empty fields
 	if username == "" or password == "" or confirm_password == "":
 		print("Please fill in all fields.")
 		successful_feedback_label.hide()
@@ -23,13 +26,47 @@ func _on_signup_button_pressed() -> void:
 		error_feedback_label.text = "Please fill in all fields."
 		return
 	
+	# Check username length
+	if len(username) < 4 or len(username) > 20:
+		print("Username must be 4-20 characters long.")
+		successful_feedback_label.hide()
+		error_feedback_label.show()
+		error_feedback_label.text = "Username must be 4-20 characters long."
+		return
+	
+	# Check for invalid characters (only letters and numbers allowed)
+	if not username.match("^[a-zA-Z0-9]+$"):
+		print("Username can only contain letters and numbers.")
+		successful_feedback_label.hide()
+		error_feedback_label.show()
+		error_feedback_label.text = "Username can only contain letters and numbers."
+		return
+	
+	# Password length check
+	if len(password) < 8:
+		print("Password must be at least 8 characters long.")
+		successful_feedback_label.hide()
+		error_feedback_label.show()
+		error_feedback_label.text = "Password must be at least 8 characters long."
+		return
+	
+	# Password strength check (at least one letter, one number, and one special character)
+	if not password.match(".*[a-zA-Z].*") or not password.match(".*[0-9].*") or not password.match(".*[!@#$%^&*(),.?\":{}|<>].*"):
+		print("Password must include letters, numbers, and special characters.")
+		successful_feedback_label.hide()
+		error_feedback_label.show()
+		error_feedback_label.text = "Password must include letters, numbers, and special characters."
+		return
+	
+	# Check confirm password
 	if password != confirm_password:
 		print("Passwords do not match.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
 		error_feedback_label.text = "Passwords do not match."
 		return
-	
+	# --- VALIDATION END ---
+
 	var user_data = db.get_user(username)
 	
 	if user_data.has("username"):
@@ -39,23 +76,25 @@ func _on_signup_button_pressed() -> void:
 			error_feedback_label.show()
 			error_feedback_label.text = "Username already exists."
 			return
-	
+
 	var salt = crypto.generate_salt()
 	var hashed_password = crypto.hash_password(password, salt)
+	
 	if db.sign_up(username, hashed_password, salt):
 		print("Signup successful!")
 		error_feedback_label.hide()
 		successful_feedback_label.show()
 		successful_feedback_label.text = "Signup successful!"
-		# Redirect to login screen or main game scene
 		loading_scene.show()
 		await(get_tree().create_timer(2.4).timeout)
 		SceneSwitcher.switch_scene("res://Scenes/login_screen.tscn")
 	else:
-		print("Signup failed.")
+		var error_details = "Unexpected error at signup process."
+		print(error_details)
+		print_debug("Error details:", error_details)
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "Signup failed."
+		error_feedback_label.text = "An unexpected error occurred. Please try again."
 		username_input.text = ""
 		password_input.text = ""
 
