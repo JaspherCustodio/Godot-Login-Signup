@@ -8,7 +8,7 @@ A simple login and signup system built using Godot Engine and SQL database.
 
 ## Installation
 1. Clone this repository:
-   git clone https://github.com/JaspherCustodio/godot-login-signup
+   git clone https://github.com/JaspherCustodio/Godot-Login-Signup
 2. Open the project in Godot Engine.
 3. Set up the SQL database connection.
 4. Run the project.
