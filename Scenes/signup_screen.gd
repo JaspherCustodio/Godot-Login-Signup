@@ -39,10 +39,10 @@ func _on_signup_button_pressed() -> void:
 	regex.compile("^[a-zA-Z0-9_]+$")
 	
 	if not regex.search(username):
-		print("Username can only contain letters and numbers.")
+		print("Username can only contain letters, numbers and underscores.")
 		successful_feedback_label.hide()
 		error_feedback_label.show()
-		error_feedback_label.text = "Username can only contain\nletters and numbers."
+		error_feedback_label.text = "Username can only contain letters,\nnumbers, and underscores."
 		return
 	
 	# Password length check
