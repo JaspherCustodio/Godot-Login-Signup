@@ -69,6 +69,7 @@ grow_vertical = 2
 color = Color(0.901961, 0.780392, 0.529412, 1)
 
 [node name="ElecLabel" type="Label" parent="LoginBackground"]
+visible = false
 layout_mode = 2
 offset_left = 16.0
 offset_top = 256.0
